@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Version } from '@nestjs/common';
 import { NewPost } from './posts.interface';
 import { PostsService } from './posts.service';
 
@@ -6,6 +6,7 @@ import { PostsService } from './posts.service';
 export class PostsController {
   constructor(private postsService: PostsService) {}
 
+  @Version('1')
   @Get()
   getAllPosts() {
     return this.postsService.getlAllPosts();
